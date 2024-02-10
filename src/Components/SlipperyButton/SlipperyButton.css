@@ -1,0 +1,102 @@
+.slipperyButton .container {
+    text-align: center;
+    background-image: url(../../../public/we.jpeg);
+    background-size: cover; /* Ensure the background covers the space */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    color: #ffffff;
+    min-height: 100vh; /* Minimum height to fill the screen */
+    width: 100%; /* Responsive width */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.slipperyButton .question {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 120px;
+    font-weight: 900;
+    color: black;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-family: cursive;
+}
+
+.slipperyButton .noButton,
+.slipperyButton .yesButton {
+    margin: 10px;
+    padding: 15px 30px;
+    border: none;
+    /* Remove default border */
+    border-radius: 25px;
+    /* Rounded buttons for a more stylish look */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    /* Make the text bold */
+    outline: none;
+    /* Remove outline to clean up focus state */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Smooth transitions for interactions */
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.19);
+    /* Subtle shadows for depth */
+}
+
+.slipperyButton .noButton {
+    background: #E91E63;
+    /* Stylish pink for contrast */
+}
+
+.slipperyButton .yesButton {
+    background: #4CAF50;
+    /* Vibrant green for visibility */
+    position: absolute;
+}
+
+/* Enhance hover and focus styles for interactivity */
+.slipperyButton .noButton:hover,
+.slipperyButton .yesButton:hover,
+.slipperyButton .noButton:focus,
+.slipperyButton .yesButton:focus {
+    transform: scale(1.05);
+    /* Slightly enlarge buttons on hover/focus */
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2), 0 10px 24px rgba(0, 0, 0, 0.25);
+    /* Intensify shadow for depth */
+}
+
+/* Animations for the Yes button to dodge clicks */
+@keyframes shakeAnimation {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* Trail effect using box-shadow */
+@keyframes trailEffect {
+    0% {
+        box-shadow: 0 0 12px rgba(76, 175, 80, 0.7);
+        /* Initial shadow */
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.7), 0 0 40px rgba(76, 175, 80, 0.7);
+        /* Final shadow with increased spread and blur */
+    }
+}
+
+
+.slipperyButton .yesButton:hover,
+.slipperyButton .yesButton:focus {
+    animation: shakeAnimation 0.5s ease forwards, trailEffect 0.5s ease forwards;
+}

@@ -176,7 +176,7 @@ const SlipperyButton = () => {
                 <button
                     ref={noButtonRef}
                     className="noButton"
-                    onClick={() => alert('Okay!! as you wish!!')}
+                    onClick={() => alert('You said NO...Okay!! as you wish!!')}
                 >
                     No
                 </button>
